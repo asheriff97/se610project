@@ -68,7 +68,7 @@ class App extends Component {
     return (
       // ClassName to apply css to div
       < div className="main-container" >
-        <h2>Mahmoud's File Upload System</h2>
+        <h2>Salt N' Peppa Upload System</h2>
         <h3>File Upload with React and develop a Serverless API on AWS</h3>
         <div>
           {/** Where we handle the file upload, and button for uploading to S3 Bucket */}
