@@ -1,5 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class App extends Component {
   state = {
@@ -25,9 +26,10 @@ class App extends Component {
      * Set selected file back to null b/c we already uploaded it
      * Then set fileUploadedSuccessfully equal to true
     */
-    console.log(formData);
-    this.setState({ selectedFile: null })
-    this.setState({ fileUploadedSuccessfully: true })
+    axios.post("https://jwxdz7o9ia.execute-api.us-east-1.amazonaws.com/prod/file-upload", formData).then(() => {
+      this.setState({ selectedFile: null })
+      this.setState({ fileUploadedSuccessfully: true })
+    })
   }
 
   fileData = () => {
@@ -68,7 +70,7 @@ class App extends Component {
     return (
       // ClassName to apply css to div
       < div className="main-container" >
-        <h2>Mahmoud's File Upload System</h2>
+        <h2>Salt N' Peppa File Upload System</h2>
         <h3>File Upload with React and develop a Serverless API on AWS</h3>
         <div>
           {/** Where we handle the file upload, and button for uploading to S3 Bucket */}
